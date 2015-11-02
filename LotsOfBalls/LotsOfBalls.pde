@@ -1,8 +1,8 @@
-  float[] x = new float[5];
-  float[] y = new float[5];
-  float[] velx = new float[5];
-  float[] vely = new float[5];
-  float[] diam = new float[5];
+  float[] x = new float[10];
+  float[] y = new float[10];
+  float[] velx = new float[10];
+  float[] vely = new float[10];
+  float[] diam = new float[10];
 // float x1, y1, velx1, vely1;
 
 void setup() {
@@ -11,7 +11,7 @@ void setup() {
 
   //initialize variables
   int i = 0; 
-  while(i < 5){
+  while(i < 10){
   x[i] = random(width);
   y[i] = random(height);
   diam[i] = random(5,100);
@@ -25,7 +25,7 @@ void draw() {
   //draw background to cover previous frame
   background(0);
   int i = 0;
-  while(i<5){
+  while(i<10){
   //draw ball
   ellipse(x[i], y[i], diam[i], diam[i]);
 
