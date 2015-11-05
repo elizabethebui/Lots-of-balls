@@ -1,4 +1,4 @@
-  int count = 50; 
+  int count = 200; 
   float[] x = new float[count];
   float[] y = new float[count];
   float[] velx = new float[count];
@@ -11,11 +11,11 @@ void setup() {
 
   //initialize variables
   for(int i = 0; i< count; i++){
-  x[i] = width/2;
-  y[i] = height/2;
-  diam[i] = random(5,100);
-  velx[i] = random(-5,5);
-  vely[i] = random(5,20); 
+  x[i] = random(0,width);
+  y[i] = 0;
+  diam[i] = random(3,10);
+  velx[i] = random(-1,3);
+  vely[i] = random(1,5); 
   }
 }
 
@@ -37,9 +37,14 @@ void draw() {
       velx[i] = abs(velx[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
     }
     if (y[i] + diam[i]/2 >= height) {
-      vely[i] = -abs(vely[i]);
-    } else if (y[i] - diam[i]/2 <= 0) {
-      vely[i] = abs(vely[i]);
+      x[i] = random(0,width);
+      y[i] = 0;
+    }
+    
+    if(mousePressed == true){
+    fill(100,200,255);
+    } else {
+    fill(0,255,0);
     }
   }
 }
